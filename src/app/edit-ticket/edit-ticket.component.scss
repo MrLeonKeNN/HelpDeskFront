@@ -1,0 +1,162 @@
+.section__one {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner__div {
+    width: 40%;
+}
+
+.remove_button {
+    cursor: pointer;
+    color: red;
+}
+
+.div__a {
+    display: flex;
+    min-width: 380px;
+    max-width: 700px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    > a {
+        text-align: start;
+        display: block;
+        height: 24px;
+        cursor: pointer;
+        color: #007bff;
+    }
+}
+.error_valid_zero {
+    color: red !important;
+}
+.div__one {
+    position: relative;
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    margin: 10px auto 20px auto;
+    padding-left: 10%;
+    p {
+        width: 30%;
+        text-align: center;
+    }
+    > textarea {
+        width: 350px;
+        height: 80px;
+        resize: none;
+        border-color: rgb(211, 198, 198);
+        outline: none;
+        padding: 5px 0 0 5px;
+    }
+    > button {
+        width: 200px;
+    }
+    > select {
+        width: 200px;
+        border-color: rgb(211, 198, 198);
+        height: 40px;
+        border: none;
+        background-color: #ececec;
+        padding: 4px 8px 4px 4px;
+    }
+}
+
+.intermediate {
+    width: 40px;
+}
+
+.required {
+    color: red;
+}
+
+p {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    align-self: center;
+}
+
+.conteiner__one {
+    width: 60%;
+    display: flex;
+    padding-top: 30px;
+    margin: 0 auto 0 auto;
+    align-items: center;
+    > h1 {
+        margin: 0;
+    }
+    > button {
+        margin: 0 50px 0 0;
+        color: white;
+    }
+}
+
+.container__two {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div__button {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.div__button__one {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: center;
+    button {
+        margin-left: 80px;
+    }
+}
+
+.div__button__one1 {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: center;
+    button {
+        margin-left: 80px;
+    }
+}
+
+.color__white {
+    color: white;
+    width: 120px;
+}
+
+.custom__input {
+    width: 200px;
+    border: 1px solid rgb(211, 198, 198);
+    outline: none;
+    height: 26px;
+}
+
+.fail {
+    color: red;
+}
+
+.custom__input {
+    width: auto;
+    border: none;
+}
+
+.custom__textarea__one {
+    resize: none;
+    width: 350px;
+    height: 80px;
+}

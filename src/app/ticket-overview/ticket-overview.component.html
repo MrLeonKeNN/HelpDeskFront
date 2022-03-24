@@ -1,0 +1,126 @@
+<section>
+    <div class="conteiner__parrent">
+
+        <div class="conteiner__one">
+            <button routerLink="/tickets" mat-raised-button color="primary">Ticket List</button>
+
+            <h1>Ticket ({{ticket.id}}) - {{ticket.name}}</h1>
+
+            <div>
+                <div *ngIf="isDraft">
+                    <button color="primary" [routerLink]="['/edit',params]" mat-raised-button>Edit
+                        Ticket</button>
+                </div>
+                <div *ngIf="isLeave"><button class="green_feed" [routerLink]="['/feedback',ticket.id]" mat-raised-button
+                        color="primary">Leave Feedback</button></div>
+                <div *ngIf="isView">
+                    <button class="green_feed" [routerLink]="['/viewFeedback', ticket.id]" mat-raised-button
+                        color="primary">View Feedback</button>
+                </div>
+            </div>
+            <div class="disable__button ">
+            </div>
+        </div>
+        <div class="conteiner__two ">
+            <div class="global__div ">
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Create on:</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div>
+                        <p>{{ticket.createOn | date:'dd/MM/yyyy' }}</p>
+                    </div>
+                </div>
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Status:</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div>
+                        <p>{{ticket.state}}</p>
+                    </div>
+                </div>
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Urgency:</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div>
+                        <p>{{ticket.urgency}}</p>
+                    </div>
+                </div>
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Desired resolution date</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div>
+                        <p>{{ticket.desiredResolutionDate | date:'dd/MM/yyyy' }}</p>
+                    </div>
+                </div>
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Owner:</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div>
+                        <p>{{ticket.ownerFirstName}} {{ticket.ownerLastName}}</p>
+                    </div>
+                </div>
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Approver:</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div>
+                        <p>{{ticket.approverFirstName}} {{ticket.approverLastName}}</p>
+                    </div>
+                </div>
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Assignee:</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div>
+                        <p>{{ticket.assignerFirstName}} {{ticket.assignerLastName}}</p>
+                    </div>
+                </div>
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Attachments:</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div class="div__a "><a *ngFor="let item of ticket.attachmentName "
+                            (click)="getAttachment(ticket.id,item) ">{{item}}</a></div>
+
+                </div>
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Description:</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div>
+                        <p>{{ticket.description}}</p>
+                    </div>
+                </div>
+                <div class="two__onediv ">
+                    <div class="two__twodiv ">
+                        <p>Category:</p>
+                    </div>
+                    <div class="two__treediv "></div>
+                    <div>
+                        <p>{{ticket.category}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</section>
+
+
+<!-- 
+<div>
+    <button (click)="test() ">CLICK</button>
+</div> -->

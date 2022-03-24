@@ -1,0 +1,35 @@
+<form [formGroup]="form">
+    <div>
+        <div class="div__button">
+            <button [routerLink]="['/overview/history',id]" mat-raised-button>History</button>
+            <button mat-raised-button color="primary">Comments</button>
+        </div>
+        <div class="conteiner__one">
+            <div>
+                <p>Date</p>
+            </div>
+            <div>
+                <p>User</p>
+            </div>
+            <div>
+                <p>Comment</p>
+            </div>
+        </div>
+        <div *ngFor="let item of comments" class="container__two_2">
+            <div>
+                <p>{{item.date | date:'MMM,dd yyyy HH:mm:ss'}}</p>
+            </div>
+            <div>
+                <p>{{item.firstName}} {{item.lastName}}</p>
+            </div>
+            <div>
+                <p>{{item.text}}</p>
+            </div>
+        </div>
+        <div class="customButton"><button mat-raised-button (keyup.enter)="getMoreComment()" (click)="getMoreComment()">More Comment</button></div>
+        <div class="container__two">
+            <textarea  style=" white-space: pre-wrap;" #comment type="text" formControlName="text"></textarea>
+            <button class="but__addComm" (click)="addComment(comment.value)" mat-raised-button>Add Comment</button>
+        </div>
+    </div>
+</form>

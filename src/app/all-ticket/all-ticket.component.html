@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="div__button__one">
+        <button (click)="logout()" class="custom__buttton" mat-raised-button>Logout</button>
+        <button *ngIf="canCreate" routerLink="/create" class="button__create" mat-raised-button color="accent">Create New Ticket</button>
+        <div *ngIf="!canCreate" class="empty__button"></div>
+    </div>
+    <div class="div__button__two">
+        <button class="button__blue" mat-raised-button color="primary">All Tickets</button>
+        <button mat-raised-button routerLink="/myTickets">My Tickets</button>
+    </div>
+    <app-table-ticket (notify)="getChildTitle($event)">LOADING...</app-table-ticket>
+</div>

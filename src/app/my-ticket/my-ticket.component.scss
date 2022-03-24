@@ -1,0 +1,105 @@
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.div__button__one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div__button__two {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    >button {
+        width: 45%;
+        font-weight: 400;
+    }
+}
+
+.button__create {
+    margin: 30px 0 40px 0;
+    width: 350px;
+    height: 50px;
+    font-weight: 400;
+    background-color: #32CD32;
+}
+
+.custom__buttton {
+    width: 140px;
+}
+
+.triangle__up {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 10px 5px;
+    border-color: transparent transparent black transparent;
+    margin-bottom: 1px;
+}
+
+.triangle__down {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 5px 0 5px;
+    border-color: black transparent transparent transparent;
+}
+
+.head__div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    background-color: rgb(231, 231, 231);
+    >div {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        height: 50px;
+        border: 1px solid rgb(204, 203, 203);
+    }
+    >p {
+        margin: 0;
+    }
+}
+
+:host::ng-deep .mat-typography {
+    margin: 0;
+}
+
+.body__div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    >div {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        height: 50px;
+        border: 1px solid rgb(204, 203, 203);
+    }
+    >p {
+        margin: 0;
+    }
+}
+
+.body__div:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.custome__input {
+    margin: 50px 0 40px 20px;
+    border-radius: 40px;
+    border: 1px solid rgb(170, 165, 165);
+    outline: none;
+    width: 250px;
+    height: 35px;
+    padding: 0 0 0 10px;
+}
+.empty__button{
+	height: 140px;
+}

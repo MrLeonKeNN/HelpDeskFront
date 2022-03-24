@@ -1,0 +1,90 @@
+.conteiner__one{
+	margin: 50px  auto auto auto;
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+	>div{
+
+		border: 1px solid #bdbdbd;
+		// max-width: 367px;
+		width: 100%;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #e7e7e7;
+		>p{
+			margin: 0;
+		}
+	}
+}
+.container__two_2{
+	margin: 0  auto auto auto;
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+	>div{
+
+		border: 1px solid #bdbdbd;
+		width: 100%;
+		// max-width: 364px;
+		min-height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: white;
+		>p{
+			// min-width: 364px;
+			// max-width: 364px;
+			word-wrap: break-word;
+			padding: 10px 10px;
+			margin: 0;
+			text-align: center;
+		}
+	}
+}
+.div__button{
+	display: flex;
+	width: 80%;
+	margin: auto;
+	justify-content: space-between;
+	>button{
+		width: 45%;
+	}
+}
+.container__two{
+	width: 80%;
+	margin: 30px auto auto auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	padding-bottom: 50px;
+}
+textarea{
+	resize: none;
+	height: 100px;
+	width: 400px	;
+	margin: 0 50px 0 0;
+	padding: 10px 0 0 10px;
+}
+.but__addComm{
+
+	width: 150px;
+}
+.customButton{
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+.table__phone{
+	padding-top:40px ;
+	display: none;
+	width: 80%;
+	margin: auto;
+}
+.div__phone{
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid #bdbdbd;
+	padding: 8px 10px;
+}

@@ -1,0 +1,70 @@
+<input placeholder="Search" #comment [(ngModel)]="text" (keyup)="search(comment.value)" class=" custome__input " type="text ">
+<div class="head__div ">
+    <div>
+        <p>ID</p>
+        <div>
+            <div class="triangle__up " (click)="sort( 'ASC', 'ID') "></div>
+            <div class="triangle__down " (click)="sort( 'DESC', 'ID') "></div>
+        </div>
+    </div>
+    <div>
+        <p>Name</p>
+        <div>
+            <div class="triangle__up " (click)="sort( 'ASC', 'NAME') "></div>
+            <div class="triangle__down " (click)="sort( 'DESC', 'NAME') "></div>
+        </div>
+    </div>
+    <div>
+        <p>Desired Date</p>
+        <div>
+            <div class="triangle__up " (click)="sort( 'ASC', 'DATE') "> </div>
+            <div class="triangle__down " (click)="sort( 'DESC', 'DATE') "></div>
+        </div>
+    </div>
+    <div>
+        <p>Urgency</p>
+        <div>
+            <div class="triangle__up " (click)="sort( 'ASC', 'URGENCY') "></div>
+            <div class="triangle__down " (click)="sort( 'DESC', 'URGENCY') "></div>
+        </div>
+    </div>
+    <div>
+        <p>Status</p>
+        <div>
+            <div class="triangle__up " (click)="sort( 'ASC', 'STATUS') "></div>
+            <div class="triangle__down " (click)="sort( 'DESC', 'STATUS') "></div>
+        </div>
+    </div>
+    <div>
+        <p>Action</p>
+    </div>
+</div>
+<div class="body__div " *ngFor="let item of tickets.tickets ">
+    <div>
+        <p>{{item.id}}</p>
+    </div>
+    <div>
+        <a [routerLink]="[ '/overview/history/',item.id] ">{{item.name}}</a>
+    </div>
+    <div>
+        <p>{{item.desiredResolutionDate | date:'dd/MM/yyyy'}}</p>
+    </div>
+    <div>
+        <p>{{item.urgency}}</p>
+    </div>
+    <div>
+        <p>{{item.state}}</p>
+    </div>
+    <div class="phone__table2 ">
+        <div class="btn-group " ngbDropdown role="group " aria-label="Button group with nested dropdown ">
+            <button *ngIf="item.actions.length> 0" class="btn btn-outline-success" ngbDropdownToggle>Actions</button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+                <div *ngFor="let a of item.actions">
+                    <button (click)="actionUpdate(a,item.id)" ngbDropdownItem>{{a}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<mat-paginator [length]="count" [pageSize]="10" #paginator [pageIndex]="pageIndex" (page)="getLimitTicket($event)" [pageSizeOptions]="[10]" aria-label="Select page">
+</mat-paginator>

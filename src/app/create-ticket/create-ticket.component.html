@@ -1,0 +1,128 @@
+<div class="conteiner__one ">
+    <button routerLink="/tickets" class="color__white" mat-raised-button color="primary">Ticket List</button>
+    <h1>Create new Tickets</h1>
+</div>
+<form [formGroup]="form">
+    <div class="container__two ">
+        <div class="div__one">
+            <p>Category <span class="required">*</span></p>
+            <div class="intermediate"></div>
+            <mat-form-field appearance="fill">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category" required>
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let item of category" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['category'].invalid">Please choose an category</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="div__one">
+            <p>Name <span class="required">*</span></p>
+            <div class="intermediate"></div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input type="email" matInput formControlName="name" placeholder="">
+                    <mat-hint>Max length 100</mat-hint>
+                    <mat-error *ngIf="form.controls['name'].invalid">
+                        Please enter a valid name
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="div__one">
+            <p>Description</p>
+            <div class="intermediate"></div>
+            <div>
+                <mat-form-field class="example-full-width  custom__textarea__one">
+                    <mat-label>Description</mat-label>
+                    <textarea rows="40" class="custom__textarea__one" type="description" matInput
+                        formControlName="description">
+							</textarea>
+                    <mat-hint>Max length 500</mat-hint>
+                    <mat-error *ngIf="form.controls['description'].invalid">
+                        Please enter a valid description
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div class="div__one">
+            <p>Urgency <span class="required">*</span></p>
+            <div class="intermediate"></div>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Urgency</mat-label>
+                <mat-select formControlName="urgency" required>
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let item of urgency" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['urgency'].invalid">Please choose an category</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="div__one">
+            <p>Desired resolution date</p>
+            <div class="intermediate"></div>
+            <mat-form-field appearance="fill" class="custom__date">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" [min]="todayDate" formControlName="desiredResolutionDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="div__one">
+            <p>Add attachments</p>
+            <div class="intermediate"></div>
+            <input class="custom__input" #takeInput multiple type="file" (change)="onFileSelect($event)">
+            <div>
+                <button class="reset__button" mat-raised-button (click)="reset()">Reset</button>
+            </div>
+            <p class="error__p"  *ngIf="!validAttach">The selected file type is not
+                allowed. Please select a file of one of the following types: pdf, png, doc, docx, jpg, jpeg</p>
+            <p class="error__p2" *ngIf="!validSize">The size of the
+                attached file should not be greater than 5 Mb. Please select another file</p>
+        </div>
+
+        <div class="div__one">
+            <p>Remove attachments</p>
+            <div class="intermediate"></div>
+            <div>
+                <div class="removeAttahment" *ngFor="let item of fileToUploadName" #item class="div__a">
+                    <div style="margin-bottom: 10px; cursor: pointer; max-width: 336px;"> <wbr> <a
+                            style="max-width:336px; "
+                            [ngClass]="{error_valid_zero:!item.validAttach || !item.validSize}"
+                            (click)=" getAttachment(item.name) "><wbr>{{item.name}}</a></div>
+                    <div style="color: red; cursor: pointer; " (click)="deletAttachment(item.name) ">Remove</div>
+                </div>
+            </div>
+        </div>
+        <div class="div__one">
+            <p>Comment</p>
+            <div class="intermediate"></div>
+            <div>
+                <mat-form-field class="example-full-width  custom__textarea__one">
+                    <mat-label>Comment</mat-label>
+                    <textarea rows="40" class="custom__textarea__one" type="description" matInput
+                        formControlName="comment">
+							</textarea>
+                    <mat-hint>Max length 500</mat-hint>
+                    <mat-error *ngIf="form.controls['comment'].invalid">
+                        Please enter a valid comment
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="div__button ">
+        <div class="div__button__one1"></div>
+        <div class="div__button__one">
+            <button mat-raised-button (click)="onclicSave('Draft')">Save as Draft</button>
+            <button class="white" mat-raised-button color="primary" (click)="onclicSave('New')">Submit</button>
+        </div>
+    </div>
+</form>

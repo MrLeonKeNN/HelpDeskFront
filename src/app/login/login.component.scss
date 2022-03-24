@@ -1,0 +1,64 @@
+:host ::ng-deep .mat-form-field-flex {
+    padding: 0;
+    background: rgb(255, 255, 255);
+}
+
+.container {
+    height: 99vh;
+    position: relative;
+    >div {
+        margin: 0;
+        position: absolute;
+        top: 34%;
+        left: 36%;
+    }
+}
+
+h1 {
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+input {
+    display: block;
+}
+
+:host ::ng-deep.mat-form-field-infix {
+    // padding: 0;
+}
+
+.div__one {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .example-full-width {
+        width: 340px;
+    }
+    >input {
+        width: 500px;
+        padding: 0px;
+    }
+    >p {
+        margin-right: 40px;
+    }
+}
+
+button {
+    display: block;
+    margin: 30px 0 0 auto;
+    min-width: 94px;
+}
+
+.Error__class {
+    text-align: center;
+    color: rgb(179, 11, 11);
+    padding: 8px 4px;
+    border: 1px solid red;
+    background-color: rgb(233, 225, 225);
+    border-radius: 14px;
+}
+
+.Error__div {
+    margin-top: 20px;
+}

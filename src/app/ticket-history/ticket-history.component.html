@@ -1,0 +1,36 @@
+<div class="div__par">
+    <div class="div__button">
+        <button mat-raised-button color="primary">History</button>
+        <button [routerLink]="['/overview/comment',id]" mat-raised-button>Comments</button>
+    </div>
+    <div class="conteiner__one">
+        <div>
+            <p>Date</p>
+        </div>
+        <div>
+            <p>User</p>
+        </div>
+        <div>
+            <p>Action</p>
+        </div>
+        <div>
+            <p>Description</p>
+        </div>
+    </div>
+    <div *ngFor="let item of history" class="conteiner__two">
+        <div>
+            <p>{{item.date | date:'MMM,dd yyyy HH:mm:ss'}}</p>
+        </div>
+        <div>
+            <p>{{item.firstName}} {{item.lastName}}</p>
+        </div>
+        <div>
+            <p>{{item.action}}</p>
+        </div>
+        <div>
+            <p>{{item.description}}</p>
+        </div>
+    </div>
+
+    <div class="customButton"><button mat-raised-button (click)="getMoreHistory()">More
+            History</button></div>

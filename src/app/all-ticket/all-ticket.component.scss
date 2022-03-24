@@ -1,0 +1,34 @@
+.container {
+	max-width: 1140px;
+	margin: auto;
+}
+.div__button__one {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.div__button__two {
+	display: flex;
+	margin: auto;
+	justify-content: space-between;
+	> button {
+		width: 45%;
+		font-weight: 400;
+	}
+}
+
+.button__create {
+	margin: 30px 0 40px 0;
+	width: 350px;
+	height: 50px;
+	font-weight: 400;
+	background-color: #32cd32;
+}
+
+.custom__buttton {
+	width: 140px;
+}
+.empty__button {
+	height: 140px;
+}

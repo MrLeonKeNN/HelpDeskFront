@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+    <section>
+        <div class="div__one ">
+            <button class="green_edit" [routerLink]="['/overview/history/',params.id]" mat-raised-button
+                color="primary">Back</button>
+        </div>
+
+        <div>
+            <h1>Ticket({{params.id}}) - task {{params.id}}</h1>
+            <p class="p__feedback">Feedback</p>
+            <div *ngIf="!feedbackNotFound" class="div__404">User has not left feedback yet</div>
+            <div class="rating-result">
+                <span *ngFor="let item of feedbackRateOn" class="active"></span>
+            </div>
+            <div class="textArea__div">
+                <p class="p__text">{{feedback.description}}</p>
+            </div>
+        </div>
+
+        <div class="div__button"></div>
+        <div class="div__buttn"></div>
+    </section>
+
+
+</form>
